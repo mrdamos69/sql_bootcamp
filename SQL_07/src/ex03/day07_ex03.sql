@@ -11,3 +11,4 @@ with top_order as (select pz.name, count(m.pizzeria_id), concat('order') as acti
 select top_visit.name, (top_order.count + top_visit.count) as total_count
 from top_order
 join top_visit on top_visit.name = top_order.name
+order by total_count DESC, name
